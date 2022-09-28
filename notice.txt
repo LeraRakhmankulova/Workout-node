@@ -1,0 +1,6 @@
+package.json > "type": "module" //чтобы писать без require
+                "dev": "concurrently \"npm run server\" \"npm run client\"" //удобно писать чтобы запускать и клиента и сервера
+
+новые библиотечки:  colors(красивый вывод в терминал); 
+                    morgan(логирует в консоли запросы);
+                    
