@@ -1,12 +1,10 @@
 import mongoose from "mongoose";
 
-const connectDB = async () => {
+export const connectDB = async () => {
   try {
-    const connection = await mongoose.connect(process.env.MONGO_URI, {
+    await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
+      useNewUrlParser: true
     });
   } catch (error) {
     console.error(`Error: ${error.message}`.red.bold);
