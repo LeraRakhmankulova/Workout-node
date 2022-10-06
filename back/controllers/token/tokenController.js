@@ -1,8 +1,8 @@
 import asyncHandler from "express-async-handler";
 import tokenService from "../../services/token/token.service.js";
 
-//@desc refresh tokrn
-//@route get /api/refresh
+//@desc refresh token
+//@route post/api/refresh
 //@access private
 export const refreshToken = asyncHandler(async (req, res) => {
   const {refreshToken} = await req.cookies

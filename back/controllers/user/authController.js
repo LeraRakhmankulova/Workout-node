@@ -2,7 +2,7 @@ import userService from "../../services/user/user.service.js";
 import asyncHandler from "express-async-handler";
 
 //@desc login user
-//@route post /api/login
+//@route post/api/login
 //@access private
 export const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -15,7 +15,7 @@ export const loginUser = asyncHandler(async (req, res) => {
 });
 
 //@desc logout user
-//@route post /api/logout
+//@route post/api/logout
 //@access private
 export const logoutUser = asyncHandler(async (req, res) => {
   const { refreshToken } = req.body;

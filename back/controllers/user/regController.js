@@ -4,7 +4,7 @@ import asyncHandler from "express-async-handler";
 import { validationResult } from "express-validator";
 
 //@desc user registration
-//@route post /api/reg
+//@route post/api/registration
 //@access public
 export const registerUser = asyncHandler(async (req, res) => {
   const validationErrors = validationResult(req);
@@ -22,7 +22,7 @@ export const registerUser = asyncHandler(async (req, res) => {
 });
 
 //@desc activate user
-//@route get /api/activate/:link
+//@route get/api/activate/:link
 //@access private
 export const activateUser = asyncHandler(async (req, res) => {
   const activationLink = req.params.link;

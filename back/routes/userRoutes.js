@@ -8,13 +8,13 @@ import {
 import { body } from "express-validator";
 import express from "express";
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.route("/profile").get(getUserProfile);
-router.route("/reg", body('email').isEmail(), body('password').isLength({min: 3, max: 30})).post(registerUser); // тут был just /
-router.route("/login").post(loginUser);
-router.route("/logout").post(logoutUser);
-router.route("/activate/:link").get(activateUser);
-router.route("/refresh").get(refreshToken);
+userRouter.route("/profile").get(getUserProfile);
+userRouter.route("/registration").post(registerUser, body('email').isEmail(), body('password').isLength({min: 3, max: 30})); // тут был just /
+userRouter.route("/login").post(loginUser);
+userRouter.route("/logout").post(logoutUser);
+userRouter.route("/activate/:link").get(activateUser);
+userRouter.route("/refresh").get(refreshToken);
 
-export default router;
+export default userRouter;
