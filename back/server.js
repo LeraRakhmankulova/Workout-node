@@ -1,24 +1,34 @@
-import express from "express";
-import morgan from 'morgan';
-import dotenv from 'dotenv';
-import colors from 'colors';
-import userRoutes from './routes/userRoutes.js'
 import { connectDB } from "./config/db.js";
+import { errorHandler, notFount } from "./middleware/errorMiddkeware.js";
+import router from "./routes/userRoutes.js";
+import colors from "colors";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
+import morgan from "morgan";
 
-dotenv.config()
+dotenv.config();
 
-connectDB()
+connectDB();
 
-const app = express()
+const app = express();
 
-if(process.env.NODE_ENV === 'development')
-    app.use(morgan('dev'))
+if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
-app.use(express.json())
+app.use(express.json());
+app.use(cookieParser()); //!important for refreshToken
+app.use(cors());
+app.use("/api", router);
+app.use(notFount);
+app.use(errorHandler);
 
-app.use('/api/users', userRoutes)
+const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT, 
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.bgMagenta.bold))
+app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.bgMagenta
+      .bold
+  )
+);

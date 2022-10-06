@@ -1,12 +1,11 @@
-
 //@desc user profile
 //@route get /api/users/profile
 //@access private
-export const getUserProfile = (req, res) => {
-    const user = {
-        name: 'Mc Valera',
-        age: 20
-    }
+export const getUserProfile = async (req, res, next) => {
+  const user = {
+    name: "Mc Valera",
+    age: 20,
+  };
 
-    res.json(user)
-}
+  await res.json(user);
+};
