@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import Workout from "../../models/workoutModel.js";
+import Workout from "../../models/workout/workoutModel.js";
 
 //@desc create new workout
 //@route post/api/workout/create
@@ -14,7 +14,8 @@ export const createWorkout = asyncHandler(async(req, res) => {
 //@route get/api/workout/
 //@access private
 export const getWorkout = asyncHandler(async(req, res) => {
-    res.json('perfectly')
+    const workout = await Workout.findById(req.params.id).populate('exercise')
+    res.json(workout)
 })
 
 //@desc create new workout
