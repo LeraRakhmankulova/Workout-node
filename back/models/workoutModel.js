@@ -5,7 +5,11 @@ const Schema = mongoose.Schema;
 const workoutShema = mongoose.Schema(
   {
     name: { type: String, required: true },
-    exercise: { type: Schema.Types.ObjectId, ref: "Exercise" },
+    exercise: {
+      type: Schema.Types.ObjectId,
+      ref: "Exercise",
+      required: true,
+    },
   },
   {
     minimize: false,
