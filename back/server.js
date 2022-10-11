@@ -8,7 +8,7 @@ import express from "express";
 import morgan from "morgan";
 import userRouter from "./routes/userRoutes.js";
 import exerciseRouter from "./routes/exerciseRoutes.js";
-import workoutRouter from "./routes/workoutRoute.js";
+import workoutsRouter from "./routes/workoutRoute.js";
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ app.use(cookieParser()); //!important for refreshToken
 app.use(cors());
 app.use("/api/user", userRouter);
 app.use("/api/exercise", exerciseRouter);
-app.use("/api/workout", workoutRouter);
+app.use("/api/workout", workoutsRouter);
 app.use(notFount);
 app.use(errorHandler);
 
