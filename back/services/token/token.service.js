@@ -2,6 +2,7 @@ import Token from "../../models/tokenModel.js";
 import jwt from "jsonwebtoken";
 import { token } from "morgan";
 import { UserDto } from "../../dto/user.dto.js";
+
 class TokenService {
   generateToken(payload) {
     const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
