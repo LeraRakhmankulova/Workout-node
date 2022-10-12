@@ -10,8 +10,8 @@ import express from "express";
 
 const userRouter = express.Router();
 
-userRouter.route("/profile").get(getUserProfile);
-userRouter.route("/registration").post(registerUser, body('email').isEmail(), body('password').isLength({min: 3, max: 30})); // тут был just /
+userRouter.route("/:id").get(getUserProfile);
+userRouter.route("/registration").post(registerUser, body('email').isEmail(), body('password').isLength({min: 3, max: 30})); 
 userRouter.route("/login").post(loginUser);
 userRouter.route("/logout").post(logoutUser);
 userRouter.route("/activate/:link").get(activateUser);

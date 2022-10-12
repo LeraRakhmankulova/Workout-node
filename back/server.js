@@ -1,5 +1,5 @@
 import { connectDB } from "./config/db.js";
-import { errorHandler, notFount } from "./middleware/errorMiddkeware.js";
+import { errorHandler, notFount } from "./middleware/errorMiddleware.js";
 import colors from "colors";
 import cookieParser from "cookie-parser";
 import cors from "cors";
