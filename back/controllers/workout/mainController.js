@@ -6,8 +6,7 @@ import Workout from "../../models/workout/mainModel.js";
 //@access private
 export const createWorkout = asyncHandler(async(req, res) => {
     const {name, exercisesId} = req.body
-    const workout = await Workout.create({name, exercise: exercisesId})
-    res.json(workout)
+    await Workout.create({name, exercise: exercisesId})
 })
 
 //@desc get workout

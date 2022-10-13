@@ -17,7 +17,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   res.cookie("refreshToken", userData.refreshToken, {
     maxAge: 14 * 24 * 3600000,
     httpOnly: true,
-  }); //важно указывать httponly
+  });
   return res.json(userData);
 });
 
