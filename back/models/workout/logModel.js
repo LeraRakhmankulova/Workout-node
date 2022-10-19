@@ -16,7 +16,7 @@ const workoutLogSchema = mongoose.Shema(
     },
     completed: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   {

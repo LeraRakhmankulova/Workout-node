@@ -19,9 +19,6 @@ class ExerciseLogService {
 
     return logExercise;
   }
-
-//   async getExerciseLog(user, exercise, times) {
-
 }
 
 export default new ExerciseLogService();

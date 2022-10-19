@@ -70,7 +70,7 @@ export const updateLogExercise = asyncHandler(async (req, res) => {
 });
 
 //@desc update logExercise
-//@route get/api/exercise/log/update/completed
+//@route get/api/exercise/log/completed
 //@access private
 export const updateLogExCompleted = asyncHandler(async (req, res) => {
   const { logId, completed } = req.body;
