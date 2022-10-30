@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node back/server",
     "server": "nodemon back/server",
-    "client": "npm run dev --prefix front",
+    "client": "npm run start --prefix front",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "type": "module",
@@ -23,6 +23,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.2",
     "nodemailer": "^6.8.0",
+    "react-router-dom": "^6.4.2",
+    "sass": "^1.55.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

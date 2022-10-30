@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const Schema = mongoose.Schema;
-
-const workoutLogSchema = mongoose.Shema(
+const workoutLogSchema = mongoose.Schema(
   {
     user: {
       type: Schema.Types.ObjectId,

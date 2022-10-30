@@ -1,8 +1,8 @@
 //@desc user profile
 //@route get /api/users/profile
-import ExerciseLog from "../../models/exercise/logModel";
-import User from "../../models/userModel";
-import WorkoutLog from "../../models/workout/logModel";
+import ExerciseLog from "../../models/exercise/logModel.js";
+import User from "../../models/userModel.js";
+import WorkoutLog from "../../models/workout/logModel.js";
 
 //@access private
 export const getUserProfile = async (req, res) => {
